@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-home {
+  background-image: url("/home.jpg");
+}
+
+.bg-entre-libro {
+  background-image: url("/entre-libro.jpg");
+}
+
+.bg-entre-libro-text {
+  background-image: url("/entre-libro/6.2.png");
+}
+
+.bg-multi-espacio {
+  background-image: url("/multi-espacio.jpg");
+}
+
+
