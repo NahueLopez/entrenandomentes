@@ -20,3 +20,45 @@
 }
 
 
+
+/* Loader.css */
+
+/* Estilo del contenedor del loader */
+.loader {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-color: rgba(24, 69, 91, 0.8); /* Color de fondo oscuro con opacidad */
+}
+
+/* Estilo del spinner */
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3); /* Borde blanco semitransparente */
+  border-top: 8px solid #5BA9D9; /* Borde superior con color */
+  border-radius: 50%; /* Hacerlo circular */
+  width: 100px; /* Ancho del spinner */
+  height: 100px; /* Altura del spinner */
+  animation: spin 1s linear infinite; /* Animación de rotación */
+  margin-bottom: 20px; /* Espacio entre el spinner y el texto */
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Comienza en 0 grados */
+  }
+  100% {
+    transform: rotate(360deg); /* Termina en 360 grados */
+  }
+}
+
+/* Estilo para el texto */
+.text {
+  color: #5BA9D9; /* Color del texto */
+  font-size: 1.5rem; /* Tamaño del texto */
+  text-align: center; /* Centra el texto */
+}
+
+

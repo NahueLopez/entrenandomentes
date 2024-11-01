@@ -1,4 +1,5 @@
-import React from 'react'
+import Loader from '../components/Loader';
+import { useState, useEffect } from 'react';
 
 import one from "/public/multi_espacio/1.png"
 import one_two from "/public/multi_espacio/1.2.png"
@@ -26,15 +27,27 @@ import eigth_two from "/public/multi_espacio/8.1.png"
 
 
 function MultiEspacio() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoading(false), 2000); // 2 segundos de retraso
+    return () => clearTimeout(timeout); // Limpia el timeout al desmontar el componente
+  }, []);
+
+  if (isLoading) {
+    return <Loader/>;
+  }
+
   return (
     <div className='bg-multi-espacio w-full flex flex-col items-center justify-center mt-20'>
-       
+
     {/* Primer conjunto de imágenes */}
     <div className='relative mb-20 mt-20'>
-      <img src={one} className='w-auto h-auto' />
+      <img src={one} className='w-auto h-auto' loading="lazy"/>
       <div className='absolute inset-0 flex flex-col items-center justify-center space-y-2'>
-        <img src={one_two} className='md:w-3/5 w-4/5 h-auto' />
-        <img src={one_three} className='md:w-3/5 w-4/5 h-auto mt-10' />
+        <img src={one_two} className='md:w-3/5 w-4/5 h-auto' loading="lazy"/>
+        <img src={one_three} className='md:w-3/5 w-4/5 h-auto mt-10' loading="lazy"/>
       </div>
     </div>
 
@@ -42,7 +55,7 @@ function MultiEspacio() {
     <div className='relative '>
             {/* Imagen 1*/}
             {/* Imagen de fondo */}
-            <img src={two} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" />
+            <img src={two} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
 
             {/* Contenedor absoluto para el título y el texto */}
             <div className='absolute inset-0 flex flex-col items-center justify-center p-4 '>
@@ -64,14 +77,14 @@ function MultiEspacio() {
     </div>
 
     <div className='relative mb-20'>
-      <img src={two_two} className='md:w-4/6 w-5/6 h-auto mx-auto' alt="Imagen de fondo" />
+      <img src={two_two} className='md:w-4/6 w-5/6 h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
     </div>  
 
     {/* Tercera conjunto de imágenes */}
     <div className='relative '>
             {/* Imagen 1*/}
             {/* Imagen de fondo */}
-            <img src={three} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" />
+            <img src={three} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
 
             {/* Contenedor absoluto para el título y el texto */}
             <div className='absolute inset-0 flex flex-col items-center justify-center p-4 '>
@@ -91,17 +104,17 @@ function MultiEspacio() {
     </div>
 
     <div className='relative flex justify-end mb-20'>
-      <img src={three_two} className='md:w-4/6 w-full h-auto' alt="Imagen de fondo" />
+      <img src={three_two} className='md:w-4/6 w-full h-auto' alt="Imagen de fondo" loading="lazy"/>
     </div>
 
     {/* Cuarta conjunto de imágenes */}
     <div className='relative items-end mb-10'>
-      <img src={four_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" />
+      <img src={four_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
     </div>
 
     <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={four} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" />
+            <img src={four} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
 
             {/* Contenedor absoluto para el título y el texto */}
             <div className='absolute inset-0 flex flex-col items-center justify-center p-4 '>
@@ -124,7 +137,7 @@ function MultiEspacio() {
     {/* Quinta conjunto de imágenes */}
     <div className='relative  '>
             {/* Imagen de fondo */}
-            <img src={five} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" />
+            <img src={five} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
 
             {/* Contenedor absoluto para el título y el texto */}
             <div className='absolute inset-0 flex flex-col items-center justify-center p-4 '>
@@ -147,13 +160,13 @@ function MultiEspacio() {
     </div>
 
     <div className='relative flex justify-end mb-20'>
-      <img src={five_two} className='md:w-full w-full h-auto' alt="Imagen de fondo" />
+      <img src={five_two} className='md:w-full w-full h-auto' alt="Imagen de fondo" loading="lazy"/>
     </div>
 
      {/* Sexta conjunto de imágenes */}
      <div className='relative'>
             {/* Imagen de fondo */}
-            <img src={six} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" />
+            <img src={six} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
 
             {/* Contenedor absoluto para el título y el texto */}
             <div className='absolute inset-0 flex flex-col items-center justify-center p-4 '>
@@ -172,13 +185,13 @@ function MultiEspacio() {
       </div>
 
       <div className='relative flex justify-end mb-20'>
-        <img src={six_two} className='md:w-full w-full h-auto' alt="Imagen de fondo" />
+        <img src={six_two} className='md:w-full w-full h-auto' alt="Imagen de fondo" loading="lazy"/>
       </div>
 
       {/* Septima conjunto de imágenes */}
       <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={seven} className='md:w-5/6 w-full h-auto mx-auto mb-10' alt="Imagen de fondo" />
+            <img src={seven} className='md:w-5/6 w-full h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
 
             <p className='text-center font-semibold text-white opacity-80 md:text-medium text-lg '>
             entrenandomentesmdp@gmail.com
@@ -188,8 +201,8 @@ function MultiEspacio() {
        {/* Octaba conjunto de imágenes */}
        <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={eigth} className='w-full h-auto mx-auto mb-10' alt="Imagen de fondo" />
-            <img src={eigth_two} className='md:w-2/6 w-full h-auto mx-auto m-20' alt="Imagen de fondo" />          
+            <img src={eigth} className='w-full h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
+            <img src={eigth_two} className='md:w-2/6 w-full h-auto mx-auto m-20' alt="Imagen de fondo" loading="lazy"/>          
       </div>
       
     
