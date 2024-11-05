@@ -1,29 +1,29 @@
 import Loader from '../components/Loader';
 import { useState, useEffect } from 'react';
 
-import one from "/public/multi_espacio/1.png"
-import one_two from "/public/multi_espacio/1.2.png"
-import one_three from "/public/multi_espacio/1.3.png"
+import one from "/public/multi_espacio/1.webp"
+import one_two from "/public/multi_espacio/1.2.webp"
+import one_three from "/public/multi_espacio/1.3.webp"
 
-import two from "/public/multi_espacio/2.png"
-import two_two from "/public/multi_espacio/2.1.png"
+import two from "/public/multi_espacio/2.webp"
+import two_two from "/public/multi_espacio/2.1.webp"
 
-import three from "/public/multi_espacio/3.png"
-import three_two from "/public/multi_espacio/3.1.png"
+import three from "/public/multi_espacio/3.webp"
+import three_two from "/public/multi_espacio/3.1.webp"
 
-import four from "/public/multi_espacio/2.png"
-import four_two from "/public/multi_espacio/4.1.png"
+import four from "/public/multi_espacio/2.webp"
+import four_two from "/public/multi_espacio/4.1.webp"
 
-import five from "/public/multi_espacio/6.png"
-import five_two from "/public/multi_espacio/5.1.png"
+import five from "/public/multi_espacio/6.webp"
+import five_two from "/public/multi_espacio/5.1.webp"
 
-import six from "/public/multi_espacio/6.png"
-import six_two from "/public/multi_espacio/6.1.png"
+import six from "/public/multi_espacio/6.webp"
+import six_two from "/public/multi_espacio/6.1.webp"
 
-import seven from "/public/multi_espacio/7.png"
+import seven from "/public/multi_espacio/7.webp"
 
-import eigth from "/public/multi_espacio/8.png"
-import eigth_two from "/public/multi_espacio/8.1.png"
+import eigth from "/public/multi_espacio/8.webp"
+import eigth_two from "/public/multi_espacio/8.1.webp"
 
 
 function MultiEspacio() {
@@ -191,7 +191,7 @@ function MultiEspacio() {
       {/* Septima conjunto de imágenes */}
       <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={seven} className='md:w-5/6 w-full h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
+            <img src={seven} className='md:w-5/6 w-3/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
 
             <p className='text-center font-semibold text-white opacity-80 md:text-medium text-lg '>
             entrenandomentesmdp@gmail.com

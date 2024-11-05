@@ -1,37 +1,37 @@
 import Loader from '../components/Loader';
 import { useState, useEffect } from 'react';
 
-import one from "/public/home/1.png"
-import one_two from "/public/home/1.2.png"
+import one from "/public/home/1.webp"
+import one_two from "/public/home/1.2.webp"
 
-import two from "/public/home/2.png"
+import two from "/public/home/2.webp"
 
     
-import three from "/public/home/3.png"
-import three_three from "/public/home/3.2.png"
+import three from "/public/home/3.webp"
+import three_three from "/public/home/3.2.webp"
 
-import four from "/public/home/4.png"
+import four from "/public/home/4.webp"
 
-import five from "/public/home/5.png"
+import five from "/public/home/5.webp"
 
-import six from "/public/home/6.png"
+import six from "/public/home/6.webp"
 
-import seven from "/public/home/7.png"
-import seven_two from "/public/home/7.2.png"
+import seven from "/public/home/7.webp"
+import seven_two from "/public/home/7.2.webp"
 
-import eigth from "/public/home/8.png"
-import eigth_two from "/public/home/8.1.png"
-import eigth_three from "/public/home/8.2.png"
-import eigth_four from "/public/home/8.3.png"
+import eigth from "/public/home/8.webp"
+import eigth_two from "/public/home/8.1.webp"
+import eigth_three from "/public/home/8.2.webp"
+import eigth_four from "/public/home/8.3.webp"
 
-import nine from "/public/home/9.png"
+import nine from "/public/home/9.webp"
 
-import ten from "/public/home/10.png"
+import ten from "/public/home/10.webp"
     
-import eleven from "/public/home/11.png"
+import eleven from "/public/home/11.webp"
 
-import twelve from "/public/home/12.png"
-import twelve_two from "/public/home/12.1.png"
+import twelve from "/public/home/12.webp"
+import twelve_two from "/public/home/12.1.webp"
 
 
 
@@ -243,7 +243,7 @@ import twelve_two from "/public/home/12.1.png"
           {/* Once conjuntio de imágenes */}
           <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={eleven} className='md:w-5/6 w-full h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
+            <img src={eleven} className='md:w-5/6 w-3/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
 
             <p className='text-center font-semibold text-white opacity-80 md:text-medium text-lg mb-20'>
             entrenandomentesmdp@gmail.com

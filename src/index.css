@@ -4,21 +4,22 @@
 
 
 .bg-home {
-  background-image: url("/home.jpg");
+  background-image: url("/home.webp");
 }
 
 .bg-entre-libro {
-  background-image: url("/entre-libro.jpg");
+  background-image: url("/entre-libro.webp");
 }
 
 .bg-entre-libro-text {
-  background-image: url("/entre-libro/6.2.png");
+  background-image: url("/entre-libro/6.2.webp");
 }
 
 .bg-multi-espacio {
-  background-image: url("/multi-espacio.jpg");
+  background-image: url("/multi-espacio.webp");
 }
 
+/* General /*
 
 
 /* Loader.css */
@@ -33,32 +34,21 @@
   background-color: rgba(24, 69, 91, 0.8); /* Color de fondo oscuro con opacidad */
 }
 
-/* Estilo del spinner */
-.spinner {
-  border: 8px solid rgba(255, 255, 255, 0.3); /* Borde blanco semitransparente */
-  border-top: 8px solid #5BA9D9; /* Borde superior con color */
-  border-radius: 50%; /* Hacerlo circular */
-  width: 100px; /* Ancho del spinner */
-  height: 100px; /* Altura del spinner */
-  animation: spin 1s linear infinite; /* Animación de rotación */
-  margin-bottom: 20px; /* Espacio entre el spinner y el texto */
-}
-
-/* Animación de rotación */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg); /* Comienza en 0 grados */
-  }
-  100% {
-    transform: rotate(360deg); /* Termina en 360 grados */
-  }
-}
-
-/* Estilo para el texto */
+/* Estilo para el texto con animación de color */
 .text {
-  color: #5BA9D9; /* Color del texto */
   font-size: 1.5rem; /* Tamaño del texto */
   text-align: center; /* Centra el texto */
+  animation: colorChange 5s linear infinite; /* Animación de cambio de color */
+}
+
+/* Definición de la animación de cambio de color */
+@keyframes colorChange {
+  0% { color: #B3CFF2; }      /* customBlue1 */
+  20% { color: #B3CFF2; }     /* customBlue2 */
+  40% { color: #2173A6; }     /* customBlue3 */
+  60% { color: #18455B; }     /* customBlue4 */
+  80% { color: #5BA9D9; }     /* customBlue5 */
+  100% { color: #B3CFF2; }    /* customBlue1 */
 }
 
 

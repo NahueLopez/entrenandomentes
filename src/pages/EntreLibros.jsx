@@ -1,40 +1,43 @@
 import { useState, useEffect } from "react"
 import Loader from "../components/Loader"
 
-import one from "/public/entre-libro/1.png"
-import one_two from "/public/entre-libro/1.2.png"
+import one from "/public/entre-libro/1.webp"
+import one_two from "/public/entre-libro/1.2.webp"
 
-import two from "/public/entre-libro/2.png"
+import two from "/public/entre-libro/2.webp"
 
-import three from "/public/entre-libro/3.png"
+import three from "/public/entre-libro/3.webp"
 
-//import four from "/public/entre-libro/4.png"
+//import four from "/public/entre-libro/4.webp"
 
-import five from "/public/entre-libro/5.png"
+import five from "/public/entre-libro/5.webp"
 
-import six from "/public/entre-libro/6.png"
-import six_two from "/public/entre-libro/6.1.png"
+import six from "/public/entre-libro/6.webp"
+import six_two from "/public/entre-libro/6.1.webp"
 
-import seven from "/public/entre-libro/7.png"
-import seven_two from "/public/entre-libro/7.1.png"
+import seven from "/public/entre-libro/7.webp"
+import seven_two from "/public/entre-libro/7.1.webp"
 
-//import eigth from "/public/entre-libro/8.png"
-import eigth_two from "/public/entre-libro/8.1.png"
+//import eigth from "/public/entre-libro/8.webp"
+import eigth_two from "/public/entre-libro/8.1.webp"
 
-//import nine from "/public/entre-libro/9.png"
-import nine_two from "/public/entre-libro/9.1.png"
+//import nine from "/public/entre-libro/9.webp"
+import nine_two from "/public/entre-libro/9.1.webp"
 
-//import ten from "/public/entre-libro/10.png"
-import ten_two from "/public/entre-libro/10.1.png"
+//import ten from "/public/entre-libro/10.webp"
+import ten_two from "/public/entre-libro/10.1.webp"
 
-import eleven from "/public/entre-libro/11.png"
-import eleven_two from "/public/entre-libro/11.1.png"
+import eleven from "/public/entre-libro/11.webp"
+import eleven_two from "/public/entre-libro/11.1.webp"
 
-import twelve from "/public/entre-libro/12.png"
+import twelve from "/public/entre-libro/12.webp"
 
-import thirteen from "/public/entre-libro/13.png"
-import thirteen_two from "/public/entre-libro/13.1.png"
+import thirteen from "/public/entre-libro/13.webp"
+import thirteen_two from "/public/entre-libro/13.1.webp"
 
+import { SiBookstack } from "react-icons/si";
+import { GiNotebook } from "react-icons/gi";
+import { SiHomeassistantcommunitystore } from "react-icons/si";
 
 
 function EntreLibros() {
@@ -51,9 +54,9 @@ function EntreLibros() {
   }
 
   return (
-    <div className='bg-entre-libro flex flex-col items-center justify-center mt-20'>
-      
-      
+
+    <div className='bg-entre-libro flex flex-col items-center justify-center mt-28 md:mt-20'>
+
       {/* Primer conjunto de imágenes */}
       <div className='relative mb-20'>
         <img src={one} className='md:w-5/6 w-full  h-auto mx-auto' loading="lazy"/>
@@ -255,11 +258,60 @@ function EntreLibros() {
         {/* Doce conjunto de imágenes */}
         <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={twelve} className='md:w-5/6 w-full h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
+            <img src={twelve} className='md:w-5/6 w-3/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
 
             <p className='text-center font-semibold text-white opacity-80 md:text-medium text-lg '>
-            entrenandomentesmdp@gmail.com
-          </p>
+              entrenandomentesmdp@gmail.com
+            </p>
+
+            <div>
+              <p className='text-center font-semibold text-white opacity-80 md:text-medium text-xl mt-36  '>
+                Enlaces
+              </p>
+              
+              <div className="flex md:flex-row flex-col gap-28 mx-auto justify-center mt-10">
+
+              <div className="flex flex-col text-center justify-center items-center transform transition-transform duration-200 hover:scale-110">
+                <a
+                  href="https://forms.gle/2FZnpc1tztFxbysaA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center"
+                >
+                  <p className="text-customBlue4 text-xl">Alquiler libros</p>
+                  <SiBookstack className="text-customBlue4 mr-2 w-40 h-40" />
+                </a>
+              </div>
+
+
+                <div className="flex flex-col text-center justify-center items-center transform transition-transform duration-200 hover:scale-110 hover:cursor-pointer">
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1Url2w30dp_pIfQIdGFsLPnW6fKBdpbdwgCU8Mfi5WGM/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center"
+                  >
+                    <p className="text-customBlue4 text-xl">Stock de libros</p>
+                    <GiNotebook className="text-customBlue4 mr-2 w-40 h-40"/>
+                  </a>
+                </div>
+
+                <div className="flex flex-col text-center justify-center items-center transform transition-transform duration-200 hover:scale-110 hover:cursor-pointer">
+                  <a
+                    href="https://entrelibrosmdp.mitiendanube.com/?fbclid=PAZXh0bgNhZW0CMTEAAaZXvUmvgM01MXPBFmRG-WoptdrofnajBzagSepv97fohMH5loYvQUIfPws_aem_oqW2VZKhsNxSuqSGHshiEA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center"
+                  >
+                    <p className="text-customBlue4 text-xl">Tienda nube</p>
+                    <SiHomeassistantcommunitystore className="text-customBlue4 mr-2 w-40 h-40"/>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            
         </div>
 
         {/* 13 conjunto de imágenes */}
