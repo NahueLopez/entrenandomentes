@@ -1,53 +1,52 @@
 import { useState, useEffect } from "react"
 import Loader from "../components/Loader"
 
-import one from "/public/entre-libro/1.webp"
-import one_two from "/public/entre-libro/1.2.webp"
-
-import two from "/public/entre-libro/2.webp"
-
-import three from "/public/entre-libro/3.webp"
-
-//import four from "/public/entre-libro/4.webp"
-
-import five from "/public/entre-libro/5.webp"
-
-import six from "/public/entre-libro/6.webp"
-import six_two from "/public/entre-libro/6.1.webp"
-
-import seven from "/public/entre-libro/7.webp"
-import seven_two from "/public/entre-libro/7.1.webp"
-
-//import eigth from "/public/entre-libro/8.webp"
-import eigth_two from "/public/entre-libro/8.1.webp"
-
-//import nine from "/public/entre-libro/9.webp"
-import nine_two from "/public/entre-libro/9.1.webp"
-
-//import ten from "/public/entre-libro/10.webp"
-import ten_two from "/public/entre-libro/10.1.webp"
-
-import eleven from "/public/entre-libro/11.webp"
-import eleven_two from "/public/entre-libro/11.1.webp"
-
-import twelve from "/public/entre-libro/12.webp"
-
-import thirteen from "/public/entre-libro/13.webp"
-import thirteen_two from "/public/entre-libro/13.1.webp"
 
 import { SiBookstack } from "react-icons/si";
 import { GiNotebook } from "react-icons/gi";
 import { SiHomeassistantcommunitystore } from "react-icons/si";
 
+const images = [
+  { src: "/entre-libro/1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/1.2.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/2.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/3.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/5.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/6.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/6.1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/7.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/7.1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/8.1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/9.1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/10.1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/11.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/11.1.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/12.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/13.webp", alt: "Imagen de fondo 1" },
+  { src: "/entre-libro/13.1.webp", alt: "Imagen de fondo 1" },
+]
 
 function EntreLibros() {
 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsLoading(false), 2000); // 2 segundos de retraso
-    return () => clearTimeout(timeout); // Limpia el timeout al desmontar el componente
-  }, []);
+    const loadImages = async () => {
+        const promises = images.map(({ src }) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+        });
+        
+        await Promise.all(promises);
+        setIsLoading(false);
+    };
+    
+    loadImages();
+}, []);
 
   if (isLoading) {
     return <Loader/>;
@@ -55,19 +54,19 @@ function EntreLibros() {
 
   return (
 
-    <div className='bg-entre-libro flex flex-col items-center justify-center mt-28 md:mt-20'>
+    <div className='bg-entre-libro flex flex-col items-center justify-center mt-20'>
 
       {/* Primer conjunto de imágenes */}
       <div className='relative mb-20'>
-        <img src={one} className='md:w-5/6 w-full  h-auto mx-auto' loading="lazy"/>
-        <img src={one_two} className='absolute inset-0 m-auto w-2/6 h-auto' loading="lazy" />
+        <img src={images[0].src} className='md:w-3/6 w-full  h-auto mx-auto' loading="lazy"/>
+        <img src={images[1].src} className='absolute inset-0 m-auto w-1/6 h-auto ' loading="lazy" />
       </div>
 
       {/* Segundo conjunto de imágenes */}
       <div className='relative mb-20'>
-        <img src={two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[2].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
         <div className='absolute inset-0 flex items-center justify-center p-4'>
-          <p className='text-center font-semibold text-customBlue4 opacity-70 xl:text-extra-large lg:text-5xl md:text-lg text-sm italic lg:leading-none leading-none'>
+          <p className='text-center font-semibold text-customBlue4 opacity-70  lg:text-3xl md:text-lg text-sm italic lg:leading-none leading-none'>
             El <strong>Proyecto Entre Libros</strong> se <br />
             posiciona como más que una <br />
             simple colección de libros; <br />
@@ -88,9 +87,9 @@ function EntreLibros() {
 
       {/* Tercer conjunto de imágenes */}
       <div className='relative'>
-        <img src={three} className='md:w-5/6 w-full mx-auto h-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[3].src} className='md:w-3/6 w-full mx-auto h-auto' alt="Imagen de fondo" loading="lazy"/>
         <div className='absolute inset-0 flex items-center justify-center p-4'>
-          <p className='text-center font-light text-white opacity-80 lg:text-extra-large md:text-lg text-sm italic lg:leading-none leading-none	'>
+          <p className='text-center font-light text-white opacity-80 lg:text-4xl md:text-lg text-sm italic lg:leading-none leading-none	'>
             Nuestra misión es fomentar la <br />
             educación y, sobre todo, la <br />
             lectura en la temática del <br />
@@ -104,9 +103,9 @@ function EntreLibros() {
 
       {/* Cuarto conjunto de imágenes */}
       <div className='relative'>
-        <img src={three} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[3].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
         <div className='absolute inset-0 flex items-center justify-center p-4'>
-          <p className='text-center font-light text-white opacity-80 lg:text-extra-large md:text-lg text-sm italic lg:leading-none leading-none'>
+          <p className='text-center font-light text-white opacity-80 lg:text-4xl md:text-lg text-sm italic lg:leading-none leading-none'>
             Nos enfocamos en ser la <br />
             biblioteca más grande del <br />
             mundo en nuestra temática, <br />
@@ -119,9 +118,9 @@ function EntreLibros() {
 
       {/* Quinto conjunto de imágenes */}
       <div className='relative'>
-        <img src={five} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[4].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
         <div className='absolute inset-0 flex items-center justify-center p-4'>
-          <p className='text-center font-light text-white opacity-80 lg:text-extra-large md:text-lg text-sm italic lg:leading-none leading-none	'>
+          <p className='text-center font-light text-white opacity-80 lg:text-4xl md:text-lg text-sm italic lg:leading-none leading-none	'>
             Acompañar a las personas a <br />
             través de la lectura para que <br />
             recuerden quiénes son <br />
@@ -134,12 +133,12 @@ function EntreLibros() {
 
       {/* Sexto conjunto de imágenes */}
       <div className='relative mb-20'>
-        <img src={six} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[5].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
 
         <div className='relative mt-10'>
-        <img src={six_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[6].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
           <div className='absolute inset-0 flex items-center justify-center p-4'>         
-            <p className='text-center font-light text-customBlue4 xl:text-extra-large lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
+            <p className='text-center font-light text-customBlue4 xl:text-2xl lg:text-2xl md:text-lg text-sm italic lg:leading-none leading-none'>
               Nuestra coleccion esta compuesta por una <br />
               cuidadosa selección de libros que exploran <br />
               diferentes aspectos del desarrollo humano. <br />
@@ -156,10 +155,10 @@ function EntreLibros() {
        {/* Seven conjunto de imágenes */}
        <div className='mt-20 mb-20'>
         <div className='relative'>
-          <img src={seven} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+          <img src={images[7].src} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
           <div className='absolute inset-0 flex items-center justify-center p-4'>
-            <p className='text-center font-light text-customBlue4 xl:text-extra-large lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
-              Además de libros físicos, Entre Libros ofrece <br />
+          <p className='text-center font-light text-customBlue4 xl:text-2xl lg:text-2xl md:text-lg text-sm italic lg:leading-none leading-none'>
+          Además de libros físicos, Entre Libros ofrece <br />
               una amplia variedad de <strong>recursos adicionales</strong> <br />
               para enriquecer la experiencia de los usuarios. <br />
               Audiolibros, eBooks, materiales <br />
@@ -171,15 +170,15 @@ function EntreLibros() {
             </p>
           </div>
         </div>
-        <img src={seven_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[8].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
        </div>
 
        {/* Octabo conjunto de imágenes */}
        <div className='mt-20 mb-20'>
         <div className='relative'>
-          <img src={seven} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+          <img src={images[7].src} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
           <div className='absolute inset-0 flex items-center justify-center p-4'>
-            <p className='text-center font-light text-customBlue4 xl:text-extra-large lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
+            <p className='text-center font-light text-customBlue4 lg:text-3xl md:text-xl text-sm italic lg:leading-none leading-none'>
               Pero Entre Libros no se limita a ser una <br />
               simple biblioteca estátoca; es un <strong>espacio<br />
               dinámico que fomenta la exploración y el</strong> <br />
@@ -193,15 +192,15 @@ function EntreLibros() {
             </p>
           </div>
         </div>
-        <img src={eigth_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[9].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
        </div>
 
        {/* Noveno conjunto de imágenes */}
        <div className='mt-20 mb-20'>
         <div className='relative'>
-          <img src={seven} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+          <img src={images[7].src} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
           <div className='absolute inset-0 flex items-center justify-center p-4'>
-            <p className='text-center font-light text-customBlue4 xl:text-extra-large lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
+            <p className='text-center font-light text-customBlue4 lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
               Más allá de ser un repositorio de <br />
               conocimiento, Entre Libros es el <strong>punto de <br />
               encuentro</strong> de una comunidad de lectores <br />
@@ -214,15 +213,15 @@ function EntreLibros() {
             </p>
           </div>
         </div>
-        <img src={nine_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[10].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
        </div>
 
        {/* Dies conjunto de imágenes */}
        <div className='mt-20 mb-20'>
         <div className='relative'>
-          <img src={seven} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+          <img src={images[7].src} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
           <div className='absolute inset-0 flex items-center justify-center p-4'>
-            <p className='text-center font-light text-customBlue4 xl:text-extra-large lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
+            <p className='text-center font-light text-customBlue4 lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
               El impacto de Entre Libros se extiende <br />
               más allá de sus estantes. Numerosos <br />
               usuarios han informado un aumento en su <br />
@@ -233,15 +232,15 @@ function EntreLibros() {
             </p>
           </div>
         </div>
-        <img src={ten_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[11].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
        </div>
 
         {/* Once conjunto de imágenes */}
         <div className='mt-20 mb-20'>
         <div className='relative'>
-          <img src={eleven} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+          <img src={images[12].src} className='md:w-4/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
           <div className='absolute inset-0 flex items-center justify-center p-4'>
-            <p className='text-center font-light text-white opacity-80 xl:text-extra-large lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
+            <p className='text-center font-light text-white opacity-80 lg:text-4xl md:text-xl text-sm italic lg:leading-none leading-none'>
               Te invitamos a unirte a Entre Libros y <br />
               descubrir un mundo de conocimiento y <br />
               crecimiento personal a través de la lectura y <br />
@@ -252,13 +251,13 @@ function EntreLibros() {
             </p>
           </div>
         </div>
-        <img src={eleven_two} className='md:w-5/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
+        <img src={images[13].src} className='md:w-3/6 w-full h-auto mx-auto' alt="Imagen de fondo" loading="lazy"/>
         </div>
        
         {/* Doce conjunto de imágenes */}
         <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={twelve} className='md:w-5/6 w-3/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
+            <img src={images[14].src} className='md:w-3/6 w-3/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
 
             <p className='text-center font-semibold text-white opacity-80 md:text-medium text-lg '>
               entrenandomentesmdp@gmail.com
@@ -317,8 +316,8 @@ function EntreLibros() {
         {/* 13 conjunto de imágenes */}
         <div className='relative mb-20'>
             {/* Imagen de fondo */}
-            <img src={thirteen} className='w-5/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
-            <img src={thirteen_two} className='md:w-2/6 w-full h-auto mx-auto m-20' alt="Imagen de fondo" loading="lazy"/>          
+            <img src={images[15].src} className='w-3/6 h-auto mx-auto mb-10' alt="Imagen de fondo" loading="lazy"/>
+            <img src={images[16].src} className='md:w-2/6 w-full h-auto mx-auto m-20' alt="Imagen de fondo" loading="lazy"/>          
         </div>
 
     </div>
